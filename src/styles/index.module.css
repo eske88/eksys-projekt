@@ -1,0 +1,89 @@
+.container {
+  padding: 3rem 6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.normal__text {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.export__data__container {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  transform: translateX(-2rem);
+  transition: 0.5s all ease-in-out;
+  width: 8rem;
+}
+
+.export__data__container:hover {
+  transform: translateX(-1rem);
+}
+.export__data {
+  border-color: 2px solid black;
+  width: 100%;
+  object-fit: contain;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+}
+.image {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.header {
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.flex__container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.button {
+  width: 25rem;
+  height: 14rem;
+  border: none;
+  border-radius: 30px;
+  padding: 2rem;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+.green__button {
+  background-color: whitesmoke;
+  color: #070707;
+}
+.grey__button {
+  background-color: whitesmoke;
+  color: #070707;
+}
+.small__text {
+  font-size: 1.25rem;
+}
+.icon__container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

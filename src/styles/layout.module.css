@@ -1,0 +1,65 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+}
+
+.info {
+  position: absolute;
+  padding: 2rem;
+  background-color: whitesmoke;
+  top: 0;
+  right: 5rem;
+  min-width: 30rem;
+  color: rgb(15, 15, 15);
+  border-radius: 2px;
+}
+
+.info__container {
+  position: relative;
+  z-index: 100;
+}
+
+.image {
+  cursor: pointer;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.questionName {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-weight: bolder;
+  padding: 5rem 0rem;
+  text-align: center;
+}
+.containerCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.navigationAndInfo {
+  min-width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  top: 0;
+}
+
+.backButton {
+  position: absolute;
+  top: "50%";
+}

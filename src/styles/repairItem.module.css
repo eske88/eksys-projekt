@@ -1,0 +1,38 @@
+.data__container {
+  display: flex;
+  width: 15rem;
+  flex-direction: column;
+  padding: 2.8rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 1rem auto;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.data__container:hover {
+  opacity: 0.8;
+}
+
+.data__container {
+  background-color: whitesmoke;
+}
+
+.coloum__container {
+  color: black;
+}
+
+.name {
+  color: black;
+  font-weight: 700;
+}
+
+.time {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: black;
+  font-size: 0.75rem;
+}
