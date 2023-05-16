@@ -30,7 +30,7 @@ const Question1 = ({ onNext, onPrev, answers }: Props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer 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`,
       },
       body: JSON.stringify({
         model: "text-davinci-003",
