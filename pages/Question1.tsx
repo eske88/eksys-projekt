@@ -24,60 +24,64 @@ const Question1 = ({ onNext, onPrev, answers }: Props) => {
   const [maxTokens, setMaxTokens] = useState(50);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = () => {
-    setIsLoading(true);
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
-      },
-      body: JSON.stringify({
-        model: "text-davinci-003",
-        prompt: `[  "Spillekonsol",  
-        "Ur",  
-        "Symaskine",  
-        "Strygejern",  
-        "Kaffemaskine",  
-        "Stationær computer",  
-        "Fladskærm 15-17", "Fladskærm 19-20", "Fladskærm 22-24", 
-         "Laptop stor", "Laptop mellemstor", "Laptop lille",  
-         "Papirskærer","PC-tilbehør",  "Printer/scanner",  
-        "Digital kompaktkamera",  
-         "DSLR eller videokamera",  
-         "Håndholdt underholdningsenhed",  
-         "Hovedtelefoner",  
-         "Mobiltelefon",  
-         "Tablet",  
-         "Fladskærm 26-30",  
-         "Fladskærm 32-37",  
-         "Hi-Fi integreret",  
-         "Hi-Fi adskilte enheder",  
-         "Musikinstrument",  
-         "Bærbar radio",  
-         "Projektor",  
-         "TV- og gaming-tilbehør",  
-         "Aircondition/dehumidifier",  
-         "Dekorativ eller sikkerhedsbelysning",  
-         "Ventilator",  
-         "Hår- og skønhedsprodukt",  
-         "Elkedel",  "Lampe",  "Elværktøj",  "Lille køkkenredskab",  "Brødrister",  "Legetøj",  "Støvsuger",  "Diverse",  "Møbler",  "Cykel",  "Tøj eller tekstil",  "Diverse",  "Håndværktøj"]
-         . Vælg den bedst mulige kategori til at kategorisere ordret: ${answer}. Svar mig kun med navnet på katogorien og intet andet`,
-        max_tokens: maxTokens,
-      }),
-    };
+  // const handleSubmit = () => {
+  //   setIsLoading(true);
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer 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`,
+  //     },
+  //     body: JSON.stringify({
+  //       model: "text-davinci-003",
+  //       prompt: `[  "Spillekonsol",
+  //       "Ur",
+  //       "Symaskine",
+  //       "Strygejern",
+  //       "Kaffemaskine",
+  //       "Stationær computer",
+  //       "Fladskærm 15-17", "Fladskærm 19-20", "Fladskærm 22-24",
+  //        "Laptop stor", "Laptop mellemstor", "Laptop lille",
+  //        "Papirskærer","PC-tilbehør",  "Printer/scanner",
+  //       "Digital kompaktkamera",
+  //        "DSLR eller videokamera",
+  //        "Håndholdt underholdningsenhed",
+  //        "Hovedtelefoner",
+  //        "Mobiltelefon",
+  //        "Tablet",
+  //        "Fladskærm 26-30",
+  //        "Fladskærm 32-37",
+  //        "Hi-Fi integreret",
+  //        "Hi-Fi adskilte enheder",
+  //        "Musikinstrument",
+  //        "Bærbar radio",
+  //        "Projektor",
+  //        "TV- og gaming-tilbehør",
+  //        "Aircondition/dehumidifier",
+  //        "Dekorativ eller sikkerhedsbelysning",
+  //        "Ventilator",
+  //        "Hår- og skønhedsprodukt",
+  //        "Elkedel",  "Lampe",  "Elværktøj",  "Lille køkkenredskab",  "Brødrister",  "Legetøj",  "Støvsuger",  "Diverse",  "Møbler",  "Cykel",  "Tøj eller tekstil",  "Diverse",  "Håndværktøj"]
+  //        . Vælg den bedst mulige kategori til at kategorisere ordret: ${answer}. Svar mig kun med navnet på katogorien og intet andet`,
+  //       max_tokens: maxTokens,
+  //     }),
+  //   };
 
-    fetch("https://api.openai.com/v1/completions", requestOptions)
-      .then((response) => response.json())
-      .then((data) => {
-        const firstCompletion = data.choices[0].text.trim();
-        const cleanedString = firstCompletion.replace(/[^\w\sæøå]/gi, "");
-        const trimmedWord = cleanedString.trim();
-        setCategory(trimmedWord);
-        onNext({ name: answer, kategori: trimmedWord });
-        setIsLoading(false);
-      })
-      .catch((error) => console.log(error));
+  //   fetch("https://api.openai.com/v1/completions", requestOptions)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const firstCompletion = data.choices[0].text.trim();
+  //       const cleanedString = firstCompletion.replace(/[^\w\sæøå]/gi, "");
+  //       const trimmedWord = cleanedString.trim();
+  //       setCategory(trimmedWord);
+  //       onNext({ name: answer, kategori: trimmedWord });
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
+
+  const handleSubmit = () => {
+    onNext({ name: answer });
   };
 
   const handleKeyDown = (e: any) => {
