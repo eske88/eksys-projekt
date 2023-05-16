@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../styles/checkout.module.css";
-import { useRouter, withRouter  } from "next/router";
+import { useRouter, withRouter } from "next/router";
 import Image from "next/image";
-import BackArrow from "@/components/BackArrow";
+import BackArrow from "../components/BackArrow";
 
 function Checkout1() {
   const router = useRouter();
@@ -10,11 +10,14 @@ function Checkout1() {
   const { name } = router.query;
 
   const handleYes = () => {
-    router.push({pathname: `/CheckoutFinish`, query: { name: name, rep: '8' }})
+    router.push({
+      pathname: `/CheckoutFinish`,
+      query: { name: name, rep: "8" },
+    });
   };
 
   const handleNo = () => {
-    router.push({pathname: `/Checkout2`, query: { name: name }})
+    router.push({ pathname: `/Checkout2`, query: { name: name } });
   };
   return (
     <div className={styles.container}>

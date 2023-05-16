@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "../styles/checkout.module.css";
 import Image from "next/image";
-import BackArrow from "@/components/BackArrow";
+import BackArrow from "../components/BackArrow";
 
 import { useRouter } from "next/router";
 

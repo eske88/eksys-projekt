@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/checkout.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import BackArrow from "@/components/BackArrow";
+import BackArrow from "../components/BackArrow";
 import { initializeApp } from "firebase/app";
 import {
   getDatabase,
@@ -17,7 +17,7 @@ import {
   get,
 } from "firebase/database";
 import "firebase/database";
-import RepairItem from "@/components/RepairItem";
+import RepairItem from "../components/RepairItem";
 
 interface DataItem {
   id: string;
